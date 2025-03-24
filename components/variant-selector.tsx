@@ -33,7 +33,6 @@ export default function VariantSelector({
           <Label htmlFor="size-selector" className="text-sm font-medium">
             Size
           </Label>
-          <button className="text-xs text-primary hover:underline">Size Guide</button>
         </div>
         <RadioGroup
           id="size-selector"

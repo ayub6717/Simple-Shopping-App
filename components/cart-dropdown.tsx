@@ -17,7 +17,7 @@ export default function CartDropdown({ onClose }: { onClose: () => void }) {
     >
       <div className="flex items-center justify-between mb-4">
         <h3 className="font-medium">Your Cart</h3>
-        <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close cart">
+        <Button className="hover:bg-gray-50" variant="ghost" size="icon" onClick={onClose} aria-label="Close cart">
           <X className="h-4 w-4" />
         </Button>
       </div>
@@ -42,6 +42,7 @@ export default function CartDropdown({ onClose }: { onClose: () => void }) {
                       {formatPrice(item.price)} × {item.quantity}
                     </span>
                     <Button
+                      className="hover:bg-gray-50"
                       variant="ghost"
                       size="icon"
                       className="h-6 w-6"

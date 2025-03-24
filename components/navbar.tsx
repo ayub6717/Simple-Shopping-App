@@ -23,21 +23,17 @@ export default function Navbar() {
             <Link href="/" className="text-sm font-medium transition-colors hover:text-teal">
               Home
             </Link>
-            <Link href="#" className="text-sm font-medium transition-colors hover:text-teal">
-              Shop
-            </Link>
-            <Link href="#" className="text-sm font-medium transition-colors hover:text-teal">
-              Collections
-            </Link>
-            <Link href="#" className="text-sm font-medium transition-colors hover:text-teal">
-              About
-            </Link>
           </nav>
         </div>
 
         <div className="flex items-center gap-4">
           <div className="relative">
-            <Button variant="ghost" size="icon" className="relative hover:bg-teal/90" onClick={() => setIsCartOpen(!isCartOpen)}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="relative hover:bg-teal/10"
+              onClick={() => setIsCartOpen(!isCartOpen)}
+            >
               <ShoppingCart className="h-5 w-5" />
               <span className="sr-only">Shopping cart</span>
               {getCartCount() > 0 && (
@@ -73,27 +69,6 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
-            </Link>
-            <Link
-              href="#"
-              className="text-sm font-medium transition-colors hover:text-teal"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Shop
-            </Link>
-            <Link
-              href="#"
-              className="text-sm font-medium transition-colors hover:text-teal"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Collections
-            </Link>
-            <Link
-              href="#"
-              className="text-sm font-medium transition-colors hover:text-teal"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              About
             </Link>
           </nav>
         </div>

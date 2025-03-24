@@ -7,34 +7,15 @@ import { useCart } from "./cart-context"
 import VariantSelector from "./variant-selector"
 import { formatPrice } from "@/lib/utils"
 import { Minus, Plus, Star } from "lucide-react"
+import type { Product } from "@/data/products"
 
-// Mock product data
-const product = {
-  id: "prod_01",
-  name: "Premium Cotton T-Shirt",
-  price: 39.99,
-  description:
-    "Our premium cotton t-shirt is made from 100% organic cotton for maximum comfort and durability. Perfect for everyday wear, this versatile piece features a classic fit and comes in a variety of colors to match your style.",
-  images: [
-    "/placeholder.svg?height=600&width=500",
-    "/placeholder.svg?height=600&width=500&text=Image+2",
-    "/placeholder.svg?height=600&width=500&text=Image+3",
-    "/placeholder.svg?height=600&width=500&text=Image+4",
-  ],
-  sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-  colors: [
-    { name: "Black", value: "#000000" },
-    { name: "Teal", value: "#008080" },
-    { name: "Maroon", value: "#800000" },
-    { name: "Pink", value: "#FF69B4" },
-  ],
-  rating: 4.8,
-  reviewCount: 124,
+type ProductDisplayProps = {
+  product: Product
 }
 
-export default function ProductDisplay() {
+export default function ProductDisplay({ product }: ProductDisplayProps) {
   const { addToCart } = useCart()
-  const [selectedSize, setSelectedSize] = useState("M")
+  const [selectedSize, setSelectedSize] = useState(product.sizes[2] || product.sizes[0])
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [quantity, setQuantity] = useState(1)
   const [activeImage, setActiveImage] = useState(0)
@@ -170,7 +151,6 @@ export default function ProductDisplay() {
         <div className="space-y-2 text-sm text-muted-foreground">
           <p>Free shipping on orders over $100</p>
           <p>30-day easy returns</p>
-          <button className="text-xs text-pink hover:underline">Size Guide</button>
         </div>
       </div>
     </div>
